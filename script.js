@@ -1,10 +1,5 @@
-const countdownElement = document.getElementById("countdown");
-const messageElement = document.getElementById("birthday-message");
-const dailyMessageElement = document.getElementById("daily-message");
-
 const birthdayDate = new Date("June 6, 2025 00:00:00").getTime();
-const startDate = new Date("January 31, 2025 00:00:00").getTime(); // 125 days before June 6, 2025
-
+const startDate = new Date("February 1, 2025 00:00:00").getTime();
 const messages = [
     "Day 1: Woah Ananya ! you know , this is just the beginning of a 125-day journey! Get ready for some fun messages ",
     "Day 2: Fun fact , You're the coolest person I know , nigga ! 🕶️",
@@ -71,6 +66,7 @@ const messages = [
     "Day 120: 5 days left!! ARE YOU READY?! 🎈",
     "Day 125: OMG! YOUR SPECIAL DAY IS TOMORROW! 🎊",
     "Day 126: 🎉🎂 IT'S YOUR BIRTHDAY! WOOHOO! ENJOY YOUR SPECIAL DAY! 🎁🎈"
+    
 ];
 
 function updateCountdown() {
@@ -78,20 +74,14 @@ function updateCountdown() {
     const timeLeft = birthdayDate - now;
 
     if (timeLeft <= 0) {
-        countdownElement.style.display = "none";
-        messageElement.classList.remove("hidden");
+        document.getElementById("countdown").style.display = "none";
         return;
     }
 
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
+    document.getElementById("days").innerText = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("minutes").innerText = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("seconds").innerText = Math.floor((timeLeft % (1000 * 60)) / 1000);
 }
 
 setInterval(updateCountdown, 1000);
@@ -100,12 +90,26 @@ updateCountdown();
 function unlockMessage() {
     const now = new Date().getTime();
     const daysPassed = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+    document.getElementById("daily-message").innerText = messages[daysPassed] || "🎉 Countdown is over!";
+    document.getElementById("daily-message").classList.remove("hidden");
+    new Audio('unlock.mp3').play();
+}
 
-    if (daysPassed >= messages.length) {
-        dailyMessageElement.innerText = "🎊 No more messages! Just one day left for the big day! 🎉";
-    } else {
-        dailyMessageElement.innerText = messages[daysPassed];
-    }
+function toggleMusic() {
+    const music = document.getElementById("bg-music");
+    music.paused ? music.play() : music.pause();
+}
 
-    dailyMessageElement.classList.remove("hidden");
+function applyCustomTheme() {
+    localStorage.setItem("customTheme", JSON.stringify({
+        bg: document.getElementById("bgColorPicker").value,
+        textColor: document.getElementById("textColorPicker").value,
+        font: document.getElementById("fontPicker").value
+    }));
+    location.reload();
+}
+
+function resetTheme() {
+    localStorage.removeItem("customTheme");
+    location.reload();
 }
