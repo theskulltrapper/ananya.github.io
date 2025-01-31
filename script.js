@@ -1,72 +1,70 @@
-const countdownElement = document.getElementById("countdown");
-const messageElement = document.getElementById("birthday-message");
-const fireworksCanvas = document.getElementById("fireworks");
-const ctx = fireworksCanvas.getContext("2d");
-
-fireworksCanvas.width = window.innerWidth;
-fireworksCanvas.height = window.innerHeight;
-
-const birthdayDate = new Date("June 6, 2025 00:00:00").getTime();
-
-function updateCountdown() {
-    const now = new Date().getTime();
-    const timeLeft = birthdayDate - now;
-
-    if (timeLeft <= 0) {
-        countdownElement.style.display = "none";
-        messageElement.classList.remove("hidden");
-        startFireworks();
-        return;
-    }
-
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+    padding: 20px;
+    overflow: hidden;
 }
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-// Fireworks effect when countdown reaches 0
-let fireworks = [];
-
-function startFireworks() {
-    setInterval(() => {
-        let firework = {
-            x: Math.random() * fireworksCanvas.width,
-            y: fireworksCanvas.height,
-            radius: Math.random() * 4 + 2,
-            color: `hsl(${Math.random() * 360}, 100%, 50%)`,
-            speedY: Math.random() * -10 - 5
-        };
-        fireworks.push(firework);
-    }, 300);
-    
-    animateFireworks();
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-function animateFireworks() {
-    ctx.clearRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
+h1 {
+    font-size: 2.2em;
+}
 
-    fireworks.forEach((firework, index) => {
-        ctx.beginPath();
-        ctx.arc(firework.x, firework.y, firework.radius, 0, Math.PI * 2);
-        ctx.fillStyle = firework.color;
-        ctx.fill();
-        
-        firework.y += firework.speedY;
-        firework.radius *= 0.98;
+.date {
+    font-size: 1.3em;
+    font-weight: bold;
+}
 
-        if (firework.radius < 0.5) {
-            fireworks.splice(index, 1);
-        }
-    });
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
 
-    requestAnimationFrame(animateFireworks);
+.time-box {
+    font-size: 1.5em;
+    background: white;
+    color: #ff4d6d;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100px;
+    font-weight: bold;
+}
+
+.unlock-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background: gold;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    transition: 0.3s;
+}
+
+.unlock-btn:hover {
+    background: orange;
+}
+
+#daily-message {
+    font-size: 1.4em;
+    font-style: italic;
+    color: yellow;
+    text-shadow: 2px 2px 10px #ff0000;
+}
+
+.hidden {
+    display: none;
 }
