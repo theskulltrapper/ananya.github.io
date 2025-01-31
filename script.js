@@ -1,70 +1,55 @@
-body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    text-align: center;
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
-    color: white;
-    padding: 20px;
-    overflow: hidden;
+const countdownElement = document.getElementById("countdown");
+const messageElement = document.getElementById("birthday-message");
+const dailyMessageElement = document.getElementById("daily-message");
+
+const birthdayDate = new Date("June 6, 2025 00:00:00").getTime();
+const startDate = new Date("February 1, 2025 00:00:00").getTime(); // 125 days before June 6, 2025
+
+const messages = [
+    "Day 1: You're the best person I know! 😊",
+    "Day 2: Your smile makes my day! ☀️",
+    "Day 3: I admire your kindness! ❤️",
+    "Day 4: You light up every room! ✨",
+    "Day 5: You're an amazing friend! 🥰",
+    // Add messages for each day up to Day 125...
+    "Day 125: OMG! Your special day is tomorrow! 🎉"
+];
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const timeLeft = birthdayDate - now;
+
+    if (timeLeft <= 0) {
+        countdownElement.style.display = "none";
+        messageElement.classList.remove("hidden");
+        return;
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
 }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
-h1 {
-    font-size: 2.2em;
-}
+function unlockMessage() {
+    const now = new Date().getTime();
+    const daysPassed = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
 
-.date {
-    font-size: 1.3em;
-    font-weight: bold;
-}
+    if (daysPassed < 0) {
+        dailyMessageElement.innerText = "Wait until the first message unlocks! ⏳";
+    } else if (daysPassed >= messages.length) {
+        dailyMessageElement.innerText = "🎊 No more messages! Just one day left for the big day! 🎉";
+    } else {
+        dailyMessageElement.innerText = messages[daysPassed];
+    }
 
-#countdown {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.time-box {
-    font-size: 1.5em;
-    background: white;
-    color: #ff4d6d;
-    padding: 15px;
-    border-radius: 10px;
-    width: 100px;
-    font-weight: bold;
-}
-
-.unlock-btn {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background: gold;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 15px;
-    transition: 0.3s;
-}
-
-.unlock-btn:hover {
-    background: orange;
-}
-
-#daily-message {
-    font-size: 1.4em;
-    font-style: italic;
-    color: yellow;
-    text-shadow: 2px 2px 10px #ff0000;
-}
-
-.hidden {
-    display: none;
+    dailyMessageElement.classList.remove("hidden");
 }
