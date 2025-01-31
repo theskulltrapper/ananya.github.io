@@ -9,22 +9,43 @@
 <body>
 
     <div class="container">
-        <h1>🎉 Countdown to Ananya's Birthday! 🎂</h1>
-<h2>( a @thelazyhomosapien project ) </h2>
-        <p class="date">06 June 2025</p>
+        <h1 class="fade-in">🎂 Ananya's Birthday Countdown 🎉</h1>
+        <p class="date">Counting down to: <strong>June 6, 2025</strong></p>
 
-        <div id="countdown">
+        <div id="countdown" class="fade-in">
             <div class="time-box"><span id="days"></span> Days</div>
             <div class="time-box"><span id="hours"></span> Hours</div>
             <div class="time-box"><span id="minutes"></span> Minutes</div>
             <div class="time-box"><span id="seconds"></span> Seconds</div>
         </div>
 
-        <button class="unlock-btn" onclick="unlockMessage()">🔓 Unlock Today's Message</button>
-        <p id="daily-message" class="hidden"></p>
+        <button class="unlock-btn bounce" onclick="unlockMessage()">🔓 Unlock Today's Message</button>
+        <p id="daily-message" class="hidden glow"></p>
 
-        <p id="birthday-message" class="hidden">🎊 Happy Birthday, Ananya! 🎂🎈</p>
-        <canvas id="fireworks"></canvas>
+        <audio id="bg-music" loop>
+            <source src="music.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+    </div>
+
+    <div id="theme-settings">
+        <h3>🎨 Customize Theme</h3>
+        <label>Background Color:</label>
+        <input type="color" id="bgColorPicker">
+        <label>Text Color:</label>
+        <input type="color" id="textColorPicker">
+        <label>Font:</label>
+        <select id="fontPicker">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+            <option value="'Courier New', monospace">Courier New</option>
+            <option value="'Georgia', serif">Georgia</option>
+            <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+            <option value="'Verdana', sans-serif">Verdana</option>
+        </select>
+        <button onclick="applyCustomTheme()">Apply Theme</button>
+        <button onclick="resetTheme()">Reset to Default</button>
     </div>
 
     <script src="script.js"></script>
