@@ -43,9 +43,7 @@ function unlockMessage() {
     const now = new Date().getTime();
     const daysPassed = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
 
-    if (daysPassed < 0) {
-        dailyMessageElement.innerText = "Wait until the first message unlocks! ⏳";
-    } else if (daysPassed >= messages.length) {
+    if (daysPassed >= messages.length) {
         dailyMessageElement.innerText = "🎊 No more messages! Just one day left for the big day! 🎉";
     } else {
         dailyMessageElement.innerText = messages[daysPassed];
