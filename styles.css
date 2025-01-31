@@ -1,9 +1,10 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     text-align: center;
     background: linear-gradient(to right, #ff9a9e, #fad0c4);
-    color: #fff;
+    color: white;
     padding: 20px;
+    overflow: hidden;
 }
 
 .container {
@@ -15,58 +16,48 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-h1, h2 {
-    font-size: 2em;
+h1 {
+    font-size: 2.2em;
 }
 
-.romantic-text {
-    font-size: 1.2em;
-    font-style: italic;
+.date {
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
-.letter {
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.time-box {
+    font-size: 1.5em;
+    background: white;
+    color: #ff4d6d;
     padding: 15px;
     border-radius: 10px;
-    margin: 20px auto;
-    max-width: 90%;
-    font-size: 1.1em;
+    width: 100px;
+    font-weight: bold;
 }
 
-.question {
-    margin-top: 30px;
+#birthday-message {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 2px 2px 10px #ff0000;
 }
 
-.buttons {
-    margin-top: 20px;
+.hidden {
+    display: none;
 }
 
-button {
-    padding: 15px 25px;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.yes-btn {
-    background: #ff4d6d;
-    color: white;
-    margin-right: 10px;
-}
-
-.yes-btn:hover {
-    background: #ff1e42;
-}
-
-.no-btn {
-    background: #222;
-    color: white;
-    position: absolute;
-}
-
-.no-btn:hover {
-    background: #555;
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
 }
