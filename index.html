@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Question for You 💖</title>
+    <title>🎉 Birthday Countdown 🎂</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>Hey [Your Crush's Name] 💕</h1>
-        <p class="romantic-text">
-            I've been wanting to tell you something special for a while now...  
-            So I made this little page just for you! ✨  
-        </p>
+        <h1>🎂 Countdown to [Name]'s Birthday! 🎉</h1>
+        <p class="date">06 June 2025</p>
 
-        <div class="letter">
-            <p>[Write your heartfelt message here...]</p>
+        <div id="countdown">
+            <div class="time-box"><span id="days"></span> Days</div>
+            <div class="time-box"><span id="hours"></span> Hours</div>
+            <div class="time-box"><span id="minutes"></span> Minutes</div>
+            <div class="time-box"><span id="seconds"></span> Seconds</div>
         </div>
 
-        <h2 class="question">Will you go out with me? 💌</h2>
-
-        <div class="buttons">
-            <button class="yes-btn" onclick="yesClicked()">Yes! 💖</button>
-            <button class="no-btn" onmouseover="moveButton(this)">No 😢</button>
-        </div>
+        <p id="birthday-message" class="hidden">🎊 Happy Birthday, [Name]! 🎂🎈</p>
+        <canvas id="fireworks"></canvas>
     </div>
 
     <script src="script.js"></script>
