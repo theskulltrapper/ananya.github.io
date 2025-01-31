@@ -42,22 +42,29 @@ h1 {
     font-weight: bold;
 }
 
-#birthday-message {
-    font-size: 1.8em;
-    font-weight: bold;
+.unlock-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background: gold;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    transition: 0.3s;
+}
+
+.unlock-btn:hover {
+    background: orange;
+}
+
+#daily-message {
+    font-size: 1.4em;
+    font-style: italic;
     color: yellow;
     text-shadow: 2px 2px 10px #ff0000;
 }
 
 .hidden {
     display: none;
-}
-
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
 }
