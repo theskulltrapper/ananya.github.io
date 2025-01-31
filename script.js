@@ -1,5 +1,5 @@
 const birthdayDate = new Date("June 6, 2025 00:00:00").getTime();
-const startDate = new Date("January 31st, 2025 00:00:00").getTime();
+const startDate = new Date("January 31, 2025 00:00:00").getTime();
 const messages = [
     "Day 1: Woah Ananya ! you know , this is just the beginning of a 125-day journey! Get ready for some fun messages ",
     "Day 2: Jesus christ , your birthday is far innit , welp regardless , time can't change the fact that you are a nigga 🕶️",
