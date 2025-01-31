@@ -1,0 +1,72 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: #fff;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    font-size: 2em;
+}
+
+.romantic-text {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.letter {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 90%;
+    font-size: 1.1em;
+}
+
+.question {
+    margin-top: 30px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.yes-btn {
+    background: #ff4d6d;
+    color: white;
+    margin-right: 10px;
+}
+
+.yes-btn:hover {
+    background: #ff1e42;
+}
+
+.no-btn {
+    background: #222;
+    color: white;
+    position: absolute;
+}
+
+.no-btn:hover {
+    background: #555;
+}
