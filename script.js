@@ -143,3 +143,11 @@ function resetTheme() {
     localStorage.removeItem("customTheme");
     location.reload();
 }
+
+function displayImage() {
+    const imageUrl = document.getElementById("imageURL").value;
+    if (imageUrl) {
+        document.getElementById("imagePreview").innerHTML = `<img src="${imageUrl}" alt="Displayed Image">`;
+        document.getElementById("imagePreview").classList.remove("hidden");
+    }
+}
