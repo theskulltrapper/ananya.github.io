@@ -3,7 +3,7 @@ const messageElement = document.getElementById("birthday-message");
 const dailyMessageElement = document.getElementById("daily-message");
 
 const birthdayDate = new Date("June 6, 2025 00:00:00").getTime();
-const startDate = new Date("February 1, 2025 00:00:00").getTime(); // 125 days before June 6, 2025
+const startDate = new Date("January 1, 2025 00:00:00").getTime(); // 125 days before June 6, 2025
 
 const messages = [
     "Day 1: Guess I've Told you about this website already huh , welp , so lemme introduce what is going to happen , as each day progresses , i will leave you one message , each day , a different message ",
@@ -12,7 +12,7 @@ const messages = [
     "Day 4: You light up every room! ✨",
     "Day 5: You're an amazing friend! 🥰",
     // Add messages for each day up to Day 125...
-    "Day 125: OMG! Your special day is tomorrow! 🎉"
+    "Day 126: OMG! Your special day is tomorrow! 🎉"
 ];
 
 function updateCountdown() {
