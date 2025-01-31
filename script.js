@@ -6,7 +6,7 @@ const birthdayDate = new Date("June 6, 2025 00:00:00").getTime();
 const startDate = new Date("February 1, 2025 00:00:00").getTime(); // 125 days before June 6, 2025
 
 const messages = [
-    "Day 1: You're the best person I know! 😊",
+    "Day 1: Guess I've Told you about this website already huh , welp , so lemme introduce what is going to happen , as each day progresses , i will leave you one message , each day , a different message ",
     "Day 2: Your smile makes my day! ☀️",
     "Day 3: I admire your kindness! ❤️",
     "Day 4: You light up every room! ✨",
