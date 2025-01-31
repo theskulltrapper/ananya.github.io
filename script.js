@@ -1,9 +1,9 @@
 const birthdayDate = new Date("June 6, 2025 00:00:00").getTime();
-const startDate = new Date("February 1, 2025 00:00:00").getTime();
+const startDate = new Date("January 31st, 2025 00:00:00").getTime();
 const messages = [
     "Day 1: Woah Ananya ! you know , this is just the beginning of a 125-day journey! Get ready for some fun messages ",
     "Day 2: Fun fact , You're the coolest person I know , nigga ! 🕶️",
-    "Day 3: Fun fact: You bring so much joy to those around you! Keep being awesome. ✨",
+    "Day 3: Fun fact: You bring so much joy to those around you! keep being awesome. ✨",
     "Day 4: Just wanted to remind you how amazing you are. Have a great day! 🌟",
     "Day 5: No matter what, always remember—you're appreciated! ❤️",
     "Day 6: If life were a movie, you'd definitely be the main character. 🎬",
