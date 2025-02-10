@@ -10,7 +10,7 @@ const messages = [
     "Day 7: One week down, 118 to go! Hope you're finding it worth every day to check this page",
     "Day 8: i could have a million problems , and somehow talking to you fixes 99 percent of them",
     "Day 9: If awesomeness were a superpower, you’d be a superhero",
-    "Day 10: You are enough, just the way you are",
+    "Day 10: nigga , pick some cotton",
     "Day 11: my life is good rn , but only because you are here to see it ",
     "Day 12: how tf are you so talented",
     "Day 13: If happiness were a currency, I'd be poor without you because you make me so happy",
