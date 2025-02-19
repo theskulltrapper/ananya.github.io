@@ -35,21 +35,24 @@ button:hover {
 .hidden {
     display: none;
 }
-
-/* Coquette Theme */
 .coquette {
     background: #ffe6f2;
     color: #ff66b2;
 }
 
-/* Dark Theme */
-.dark {
-    background: #222;
-    color: white;
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
 }
 
-/* Pastel Theme */
-.pastel {
-    background: #e1f7d5;
-    color: #6d6875;
+.time-box {
+    font-size: 1.5em;
+    background: white;
+    color: #ff4d6d;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100px;
+    font-weight: bold;
 }
