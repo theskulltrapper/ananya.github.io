@@ -125,21 +125,31 @@ function unlockMessage() {
     new Audio('unlock.mp3').play();
 }
 
-function toggleMusic() {
-    const music = document.getElementById("bg-music");
-    music.paused ? music.play() : music.pause();
+function applyTheme(theme) {
+    document.body.className = theme;
+    localStorage.setItem("selectedTheme", theme);
 }
 
-function applyCustomTheme() {
-    localStorage.setItem("customTheme", JSON.stringify({
-        bg: document.getElementById("bgColorPicker").value,
-        textColor: document.getElementById("textColorPicker").value,
-        font: document.getElementById("fontPicker").value
-    }));
-    location.reload();
+// 🎀 Auto-Change Theme Daily + Allow Custom Selection
+function setDailyTheme() {
+    let today = new Date().getDate() % themes.length;
+    let defaultTheme = themes[today];
+
+    let savedTheme = localStorage.getItem("selectedTheme") || defaultTheme;
+    applyTheme(savedTheme);
 }
 
-function resetTheme() {
-    localStorage.removeItem("customTheme");
-    location.reload();
+themeSelector.addEventListener("change", function () {
+    applyTheme(themeSelector.value);
+});
+
+// 🎥 Play Video in Fullscreen on a Random Day
+const randomDate = "2025-03-15"; // Change this to a random date
+const today = new Date().toISOString().split('T')[0];
+
+if (today === randomDate) {
+    let video = document.getElementById("surpriseVideo");
+    video.classList.remove("hidden");
+    video.requestFullscreen();
+    video.play();
 }
