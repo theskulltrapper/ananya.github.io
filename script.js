@@ -125,6 +125,10 @@ function unlockMessage() {
     new Audio('unlock.mp3').play();
 }
 
+// 🎀 Change Themes
+const themes = ["coquette", "dark", "pastel"];
+const themeSelector = document.getElementById("themeSelector");
+
 function applyTheme(theme) {
     document.body.className = theme;
     localStorage.setItem("selectedTheme", theme);
@@ -142,6 +146,8 @@ function setDailyTheme() {
 themeSelector.addEventListener("change", function () {
     applyTheme(themeSelector.value);
 });
+
+setDailyTheme();
 
 // 🎥 Play Video in Fullscreen on a Random Day
 const randomDate = "2025-03-15"; // Change this to a random date
