@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => bgMusic.play(), 1000);
 });
 
+// 🎀 Countdown Timer to June 6, 2025
+
 const birthdayDate = new Date("June 6, 2025 00:00:00").getTime();
 const startDate = new Date("February 1, 2025 00:00:00").getTime();
 const messages = [
