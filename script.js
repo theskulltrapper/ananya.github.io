@@ -1,3 +1,10 @@
+// 🎵 Auto-Play Background Music (Muted Initially)
+document.addEventListener("DOMContentLoaded", function () {
+    let bgMusic = document.getElementById("bgMusic");
+    bgMusic.volume = 0.5;
+    setTimeout(() => bgMusic.play(), 1000);
+});
+
 const birthdayDate = new Date("June 6, 2025 00:00:00").getTime();
 const startDate = new Date("February 1, 2025 00:00:00").getTime();
 const messages = [
