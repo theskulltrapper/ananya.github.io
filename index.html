@@ -6,6 +6,12 @@
     <title>🎂 Ananya's Birthday Countdown 🎉</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
+
 <body>
 
     <div class="container">
@@ -26,11 +32,6 @@
 
         <button class="unlock-btn bounce" onclick="unlockMessage()">🔓 Unlock Today's Message</button>
         <p id="daily-message" class="hidden glow"></p>
-
-           <!-- Background Music -->
-    <audio id="bgMusic" loop>
-        <source src="music.mp3" type="audio/mp3">
-    </audio>
 
      <!-- Hidden Video -->
      <video id="surpriseVideo" class="hidden" controls>
