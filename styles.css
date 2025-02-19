@@ -1,118 +1,55 @@
 body {
-    text-align: center;
     font-family: 'Arial', sans-serif;
-    color: white;
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
-    transition: all 0.5s ease-in-out;
-}
-
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: background 0.5s ease-in-out;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-    font-size: 2.5em;
+/* Default Theme */
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffeff7;
+    border-radius: 12px;
+    border: 2px solid #ff80ab;
+    box-shadow: 0 4px 10px rgba(216, 27, 96, 0.3);
 }
 
-#countdown {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.time-box {
-    font-size: 1.5em;
-    background: white;
-    color: #ff4d6d;
-    padding: 15px;
-    border-radius: 10px;
-    width: 100px;
-    font-weight: bold;
-}
-
-.unlock-btn, .music-btn {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 15px;
-    transition: 0.3s;
-}
-
-.unlock-btn {
-    background: rgb(0, 255, 191);
-    color: black;
-}
-
-.music-btn {
-    background: purple;
+/* Buttons */
+button {
+    background: #ff80ab;
     color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
+button:hover {
+    background: #d81b60;
+}
+
+/* Hidden Video */
 .hidden {
     display: none;
 }
 
-#theme-settings {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.8);
+/* Coquette Theme */
+.coquette {
+    background: #ffe6f2;
+    color: #ff66b2;
+}
+
+/* Dark Theme */
+.dark {
+    background: #222;
     color: white;
-    padding: 15px;
-    border-radius: 10px;
 }
 
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.bounce {
-    animation: bounce 1.2s infinite;
-}
-
-.glow {
-    text-shadow: 0px 0px 10px rgb(238, 238, 238);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-.image-container {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.image-container h3 {
-    margin-bottom: 10px;
-}
-
-.image-container img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-}
-
-.image-container img:hover {
-    transform: scale(1.05);
+/* Pastel Theme */
+.pastel {
+    background: #e1f7d5;
+    color: #6d6875;
 }
