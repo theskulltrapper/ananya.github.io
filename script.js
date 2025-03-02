@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let bgMusic = document.getElementById("bgMusic");
     bgMusic.volume = 0.5;
-    setTimeout(() => bgMusic.play(), 1000);
+    setTimeout(() => bgMusic.play(), 0);
 });
 
 // 🎀 Countdown Timer to June 6, 2025
