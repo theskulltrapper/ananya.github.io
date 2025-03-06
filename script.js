@@ -43,7 +43,7 @@ const messages = [
     "Day 31: you're the only one who has made me an optimist , still won't forget the moment you told me to manifest srcc",
     "Day 32: take a look in the mirror , you'll see the best person in the whole world , yes , that's you , ananya.",
     "Day 33: another day , i wish i had ananya's sense of fashion and humour",
-    "Day 34: Sometimes , i think that im unlucky , then i remember i have you",
+    "Day 34: Today is a test , if you dont text me 'ashley' , it'll prove that youre taking this for granted. ",
     "Day 35: Your ability to make my day better is a superpower. ",
     "Day 36: If today isn’t great yet, just text me and i'll make it better",
     "Day 37: Never forget that you’re valued and appreciated. ",
