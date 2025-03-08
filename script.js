@@ -190,8 +190,7 @@ themeSelector.addEventListener("change", function () {
 setDailyTheme();
 
 // 🎥 Play Video in Fullscreen on a Random Day
-const randomDate = "2025-03-15"; // Change this to a random date
-const today = new Date().toISOString().split('T')[0];
+const randomDate = "08-03-2025"; // Change this to a random date
 
 if (today === randomDate) {
     let video = document.getElementById("surpriseVideo");
